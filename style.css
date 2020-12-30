@@ -1,0 +1,74 @@
+html {
+    background-color: rgb(94, 137, 255);
+    font-size: 62.5%;
+}
+
+header {
+    background-color: white;
+}
+
+.titulo {
+    display: flex;
+    align-items: baseline;
+    font-family: 'PT Sans', sans-serif;
+    margin-top: -8rem;
+}
+
+.x {
+    font-family: 'PT Sans', sans-serif;
+    font-size: 72px;
+    background: -webkit-linear-gradient( #00e8e8, #ff6767);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: #188be852;
+    padding: 0.5rem;
+    border-width: 0px
+}
+
+.titulo:last-of-type {
+    font-size: 3rem;
+    font-family: 'Oswald', sans-serif;
+    color: #66bbdd;
+}
+
+.hamburguesa {
+    cursor: pointer;
+    padding-bottom: 2rem;
+    transition: all 0.5s;
+}
+
+nav.ham {
+    background-color: black;
+    width: 3rem;
+    padding: 3px;
+    margin: 4px;
+    border: 1px;
+    border-radius: 30%;
+    position: relative;
+}
+
+.h-js:first-of-type {
+    transform: rotate(45deg);
+    border-radius: 0%;
+}
+
+.h-js:nth-child(2) {
+    visibility: hidden;
+}
+
+.h-js:last-of-type {
+    top: -19px;
+    transform: rotate(-45deg);
+    border-radius: 0%;
+}
+
+.contenedor {
+    display: grid;
+    grid-template: auto / auto;
+}
+
+.contenedor>a {
+    width: 20%;
+    text-decoration: none;
+    font-size: 2rem;
+    background-color: white;
+}
