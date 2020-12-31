@@ -1,15 +1,11 @@
-const h_js = document.querySelector('.h-js');
-const ham = document.querySelector('.ham');
-const hamburguesa = document.querySelector('.hamburguesa');
-var menu = 0;
+const hidebox = document.querySelector('#hidebox');
+var IgnorarElemento = document.getElementById('hidebox');
 
-hamburguesa.addEventListener('click', () => {
-    if (menu == 1) {
-        ham.classList.remove('h_js');
-        menu = 0;
-    } else {
-        ham.classList.add('h_js');
-        menu = 1;
+document.addEventListener('click', function(event) {
+    var isClickInsideElement = IgnorarElemento.contains(event.target);
+    if (!isClickInsideElement) {
+        hidebox.checked = false;
+        console.log("FUERA");
+        //Do something click is outside specified element
     }
-
-})
+});

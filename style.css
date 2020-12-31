@@ -1,10 +1,12 @@
 html {
     background-color: rgb(94, 137, 255);
     font-size: 62.5%;
+    font-family: 'Oswald', sans-serif;
 }
 
 header {
     background-color: white;
+    height: 20vh;
 }
 
 .titulo {
@@ -30,35 +32,62 @@ header {
     color: #66bbdd;
 }
 
+input {
+    margin: 0;
+    position: absolute;
+    width: 8rem;
+    height: 6rem;
+    cursor: pointer;
+    opacity: 0;
+}
+
+input:checked~.contenedor {
+    left: 0;
+}
+
 .hamburguesa {
     cursor: pointer;
     padding-bottom: 2rem;
     transition: all 0.5s;
+    transition: all 0.5s;
+    background-color: white;
+    padding: 2rem;
+    transition: all 0.5s;
 }
 
-nav.ham {
+.ham {
     background-color: black;
     width: 3rem;
     padding: 3px;
     margin: 4px;
     border: 1px;
     border-radius: 30%;
+    transition: all 0.5s;
+}
+
+input:checked~.hamburguesa .ham:first-of-type {
+    background: red;
+    transform: rotate(60deg) skew(-30deg);
     position: relative;
+    border-radius: 0;
+    top: 20px;
 }
 
-.h-js:first-of-type {
-    transform: rotate(45deg);
-    border-radius: 0%;
+input:checked~.hamburguesa .ham:nth-child(2) {
+    opacity: 0;
 }
 
-.h-js:nth-child(2) {
-    visibility: hidden;
+input:checked~.hamburguesa .ham:last-of-type {
+    background-color: red;
+    transform: rotate(-60deg) skew(30deg);
+    border-top: 10px;
+    border-radius: 0;
 }
 
-.h-js:last-of-type {
-    top: -19px;
-    transform: rotate(-45deg);
-    border-radius: 0%;
+.contenedor {
+    position: relative;
+    left: -200%;
+    transition: all .5s;
 }
 
 .contenedor {
@@ -71,4 +100,10 @@ nav.ham {
     text-decoration: none;
     font-size: 2rem;
     background-color: white;
+    padding-bottom: 1rem;
+    color: black;
+}
+
+.contenedor>a:hover {
+    background-color: rgb(202, 202, 202);
 }
