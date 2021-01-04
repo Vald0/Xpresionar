@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Xpresionar</title>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="css/style.css">
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=PT+Sans:ital@1&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Oswald&display=swap" rel="stylesheet">
@@ -14,6 +14,9 @@
 
 <body>
     <header>
+
+
+
         <nav class="titulo">
             <h1 class="x">X</h1>
             <h1>presionar</h1>
@@ -23,26 +26,41 @@
 
 
 
+        <!--↓ Navbar Hamburguesa ↓-->
+        <input class="check" id="hidebox" type="checkbox">
+        <div class="hamburguesa">
+
+            <nav class="ham"> </nav>
+            <nav class="ham"> </nav>
+            <nav class="ham"> </nav>
+
+        </div>
+
+
+        <div class="contenedor" id="contenedor">
+
+            <a href="#" class="link">Inicio</a>
+            <a href="#" class="link">Blog
+                <img class="blog" src="img/blogspot.png" alt="">
+            </a>
+            <a href="#" class="link">Contacto</a>
+            <a href="#" class="link">Nostros</a>
+
+        </div>
+
+
     </header>
 
-    <input class="check" id="hidebox" type="checkbox">
-    <div class="hamburguesa">
+    <section>
+        <Article>
+            <h1>Servicios de Desarrollo de sitios Web</h1>
 
-        <nav class="ham"> </nav>
-        <nav class="ham"> </nav>
-        <nav class="ham"> </nav>
+            <h2>Demuestre profesionalismo y una Buena Impresion hacia sus clientes </h2>
 
-    </div>
+        </Article>
+    </section>
 
 
-    <div class="contenedor" id="contenedor">
-
-        <a href="#" class="link">Inicio</a>
-        <a href="#" class="link">Blog</a>
-        <a href="#" class="link">Contacto</a>
-        <a href="#" class="link">Nostros</a>
-
-    </div>
 
 </body>
 <Script src="functions.js"></Script>
