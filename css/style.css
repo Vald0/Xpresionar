@@ -1,45 +1,97 @@
+/**Propiedades generales**/
+
 html {
-    background-color: rgb(94, 137, 255);
+    background: linear-gradient(23deg, #6d95da, #7f9fd6);
     font-size: 62.5%;
     font-family: 'Oswald', sans-serif;
 }
 
-header {
-    background-color: white;
-    height: 25vh;
+body {
+    margin: 0;
 }
+
+header {
+    height: 25vh;
+    display: grid;
+    grid-template-columns: 20% 80%;
+    align-items: center;
+}
+
+
+/**Arco navbar**/
+
+@media (min-width: 768px) {
+    .curva {
+        position: absolute;
+        top: -25%;
+        left: 0.7%;
+        right: 0.7%;
+        padding: 15rem;
+        border: solid 1px;
+        border-color: rgba(255, 255, 255, 1);
+        z-index: -1;
+        -webkit-box-shadow: -26px 21px 49px 28px rgba(255, 255, 255, 1);
+        -moz-box-shadow: -26px 21px 49px 28px rgba(255, 255, 255, 1);
+        box-shadow: inset -26px 21px 49px 28px rgba(255, 255, 255, 1);
+        transform: rotate(2deg);
+    }
+}
+
+.curva {
+    position: absolute;
+    top: -25%;
+    left: 0%;
+    right: 0%;
+    padding: 15rem;
+    border: solid 1px;
+    border-color: rgba(255, 255, 255, 1);
+    z-index: -1;
+    -webkit-box-shadow: -26px 21px 49px 28px rgba(255, 255, 255, 1);
+    -moz-box-shadow: -26px 21px 49px 28px rgba(255, 255, 255, 1);
+    box-shadow: inset -26px 21px 49px 28px rgba(255, 255, 255, 1);
+}
+
+
+/**Navbar y Logo**/
 
 .titulo {
     display: flex;
-    align-items: baseline;
+    align-items: center;
     font-family: 'PT Sans', sans-serif;
-    margin-top: -8rem;
-    margin-left: 1rem;
-    padding-bottom: 2rem;
     justify-content: flex-start;
+    margin: auto;
+    height: 7.8rem;
     background-color: white;
-    height: 80px;
+    box-shadow: 5px 5px #00000042;
+    padding-right: 1rem;
+    z-index: 2;
+}
+
+@media (max-width:768px) {
+    .contenedor {
+        display: none;
+    }
 }
 
 @media (min-width: 768px) {
     .contenedor {
         display: flex;
-        justify-content: space-evenly;
+        justify-content: space-around;
+        transform: skew(-50 deg) rotate(-70deg) scale(1);
     }
-    .link:first-of-type {
-        text-decoration: none;
-        font-size: 2rem;
-        margin-left: 22rem;
+    .contMovil {
+        display: none;
     }
     .link {
         text-decoration: none;
-        font-size: 2rem;
+        font-size: 2.5rem;
         transition: all 0.5s;
-        padding: 1rem 2rem 2.6rem 2rem;
         color: black;
     }
-    .link:hover {
-        background-color: rgb(202, 202, 202);
+    .link:first-of-type {
+        text-decoration: none;
+        position: relative;
+        top: -5px;
     }
 }
 
@@ -51,6 +103,7 @@ header {
     position: relative;
     width: 2rem;
     height: 2rem;
+    margin-left: 2px;
 }
 
 .link:hover~.blog {
@@ -59,14 +112,11 @@ header {
 
 @media (max-width:768px) {
     .titulo {
+        position: absolute;
         display: flex;
-        align-items: baseline;
         font-family: 'PT Sans', sans-serif;
-        margin-top: -8rem;
-        padding-bottom: 2rem;
-        justify-content: center;
         background-color: white;
-        height: 80px;
+        padding-right: 1rem;
     }
 }
 
@@ -86,75 +136,232 @@ header {
     color: #66bbdd;
 }
 
+
+/**Menu Hamburguesa y Contenedor Movil**/
+
 @media (min-width:768px) {
     input {
+        display: none;
+    }
+    .hamburguesa {
         display: none;
     }
 }
 
 @media (max-width: 768px) {
-    input {
-        margin: 0;
-        position: absolute;
-        width: 8rem;
-        height: 6rem;
-        cursor: pointer;
-        opacity: 0;
-    }
-    input:checked~.contenedor {
-        left: 0;
-    }
     .hamburguesa {
+        position: fixed;
+        right: 0%;
         cursor: pointer;
-        padding-bottom: 2rem;
-        background-color: white;
-        padding: 2rem;
+        padding: 1rem;
         transition: all 0.5s;
+        background-color: #ffffff75;
+        width: 44px;
+        height: 34px;
+        z-index: 3;
     }
     .ham {
-        background-color: black;
+        background-color: #000000c7;
         width: 3rem;
         padding: 3px;
         margin: 4px;
         border: 1px;
-        border-radius: 30%;
-        transition: all 0.5s;
+        transition: all .2s;
     }
-    input:checked~.hamburguesa .ham:first-of-type {
-        background: red;
-        transform: rotate(60deg) skew(-30deg);
-        position: relative;
-        border-radius: 0;
-        top: 20px;
+    .hamburguesa.activa {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background-color: #7f9fd600;
     }
-    input:checked~.hamburguesa .ham:nth-child(2) {
+    .activa .ham:nth-child(1) {
+        background-color: rgb(0, 195, 255);
+        transform: rotate(60deg) skewX(-34deg);
+        position: fixed;
+        padding-left: 1rem;
+    }
+    .activa .ham:nth-child(2) {
+        background-color: rgb(0, 183, 255);
+        transform: rotate(-60deg) skewX(34deg);
+        position: fixed;
+        padding-left: 1rem;
+    }
+    .activa .ham:nth-child(3) {
         opacity: 0;
     }
-    input:checked~.hamburguesa .ham:last-of-type {
-        background-color: red;
-        transform: rotate(-60deg) skew(30deg);
-        border-top: 10px;
-        border-radius: 0;
+    /**Fondo**/
+    .fondo {
+        position: fixed;
+        right: -4000px;
+        padding: 100% 27%;
+        background-color: white;
+        z-index: 2;
+        transition: all 0.3s;
     }
-    .contenedor {
-        position: relative;
-        left: -200%;
-        transition: all .5s;
+    .fondo.activa {
+        position: fixed;
+        right: 0%;
+        border: solid #ffffff;
+        box-shadow: -8px 2px 20px 0px black;
+        background-color: white;
+        transition: all 0.7s;
     }
-    .contenedor {
+    .transparente {
+        transition: all 1s;
+    }
+    .transparente.activa {
+        background-color: #7f9fd6ad;
+        padding: 80rem;
+        z-index: 1;
+        position: fixed;
+    }
+    /**Contenedor Movil**/
+    .contMovil {
         display: grid;
-        grid-template: auto / auto;
+        grid-auto-flow: row;
+        background-color: darkgray;
     }
-    .contenedor>a {
-        width: 20%;
+    .contMovil>a {
+        position: fixed;
+        left: 1000px;
+        transition: all 0.5s;
+        z-index: 2;
+        color: black;
+    }
+    .contMovil>a:nth-child(1) {
+        top: 19%;
+    }
+    .contMovil>a:nth-child(2) {
+        top: 35%;
+    }
+    .contMovil>a:nth-child(3) {
+        top: 51%;
+    }
+    .contMovil>a:nth-child(4) {
+        top: 66%;
+    }
+    .contMovil.left>a:nth-child(1) {
+        position: fixed;
+        top: 19%;
+        left: 70%;
+        transition: all 0.6s;
+    }
+    .contMovil.left>a:nth-child(2) {
+        position: fixed;
+        top: 35%;
+        left: 69%;
+        transition: all 0.7s;
+    }
+    .contMovil.left>a:nth-child(3) {
+        position: fixed;
+        top: 51%;
+        left: 68%;
+        transition: all 0.8s;
+    }
+    .contMovil.left>a:nth-child(4) {
+        position: fixed;
+        top: 66%;
+        left: 69%;
+        transition: all 0.9s;
+    }
+    .contMovil>a {
+        margin-top: 1rem;
         text-decoration: none;
         font-size: 2rem;
-        background-color: white;
-        padding-bottom: 1rem;
-        color: black;
-        padding-right: 2rem;
     }
-    .contenedor>a:hover {
-        background-color: rgb(202, 202, 202);
-    }
+}
+
+
+/** Carrusel **/
+
+.carrusel {
+    margin-top: 1.5rem;
+    display: grid;
+    grid-template-columns: 0rem 1fr 0rem;
+    justify-items: center;
+    z-index: -1;
+}
+
+.carrusel-img {
+    display: flex;
+    overflow-x: scroll;
+    max-width: 100%;
+    height: auto;
+    object-fit: cover;
+    /* This is the mainly problematic line*/
+    overflow: hidden;
+    z-index: -2;
+}
+
+img {
+    max-width: 100%;
+}
+
+.slide {
+    width: 100%;
+}
+
+.atras {
+    display: inline-grid;
+    align-content: center;
+    font-size: 5vw;
+    z-index: 0;
+    margin-left: 3rem;
+    cursor: pointer;
+    color: rgba(245, 245, 245, 0.5);
+    transition: color 0.5s;
+}
+
+.atras:hover {
+    color: white;
+}
+
+.adelante {
+    display: inline-grid;
+    align-content: center;
+    font-size: 5vw;
+    z-index: 0;
+    margin-right: 3rem;
+    cursor: pointer;
+    color: rgba(245, 245, 245, 0.5);
+    transition: color 0.5s;
+}
+
+.adelante:hover {
+    color: white;
+}
+
+.carrusel-pos {
+    display: flex;
+    justify-content: center;
+}
+
+.punto {
+    margin-top: -3rem;
+    padding: 6px;
+    border: 1px;
+    border-radius: 50%;
+    width: 5px;
+    height: 5px;
+    border-style: solid;
+    border-color: rgba(79, 79, 255, 0.596);
+    cursor: pointer;
+    z-index: 0;
+    transition: all 0.3s;
+}
+
+.activo {
+    background-color: rgba(0, 255, 170, 0.521);
+}
+
+.punto:hover {
+    background-color: whitesmoke;
+}
+
+.punto.activo:hover {
+    background-color: rgb(245, 80, 80);
+}
+
+.lorem {
+    font-size: 2rem;
 }
