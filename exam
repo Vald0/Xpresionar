@@ -1,0 +1,25 @@
+1.	Programa que pida 2 números y que nos diga cuál es el mayor, el menor y si son iguales.
+2.	Al programa anterior: Si los números no son un número o son menores o iguales a cero, nos  los vuelva a pedir.
+3.	Hacer un programa que muestre todos los números entre 2 números introducidos por el usuario.
+4.	Tabla de multiplicar de un número introducido.
+5.	Calculadora que pida 2 números, además, mostrar en el cuerpo de la página, en una alerta y por la consola el resultado de sumar, restar, multiplicar y dividir esas 2 cifras.
+6.	Programa que pida 5 números por pantalla y los meta en un array.
+7.	Mostrar el array anterior entero (todos sus elementos) en el cuerpo de la página y en la consola.
+8.	Ordenar el array anterior y mostrarlo.
+
+
+
+
+9.	Búsqueda de un valor introducido por el usuario, que nos diga si lo encuentra en el array o no.
+10.	Formulario con campos de “Nombre, apellidos y edad”, con un botón que al ser oprimido muestre los datos por consola. Además agregar una validación al formulario para evitar que metan datos vacíos.
+11.	Crear un formulario para guardar nombres de personas en el “LocalStorage” y mostrarlos por pantalla en una lista de html.
+12.	En la lista anterior agregar un botón para poder eliminar elementos del localstorage.
+13.	Mostrar un listado de artículos almacenado en un “Json”.
+14.	Crear 2 botones, al presionar cada uno de ellos desplegará una lista de elementos diferentes en el html, si el otro botón es presionado se ocultará la lista anterior para mostrar la nueva correspondiente a dicho botón. (Solo puede vizualizarse una lista a la vez).
+15.	Crear una lista desplegable de varios elementos; Cada elemento al ser seleccionado mostrará una imagen diferente en el html.
+16.	Realizar una petición GET a la API, utilizando el método FETCH para obtener valores desde la base de datos.Crear un cuadro de texto (input text) para que el usuario introduzca un valor de gafet para realizar consulta a la base de datos para obtener la informaciòn correspondiente a un usuario segùn el valor de gafet introducido por un usuario en la pagina web. Ejemplo:
+fetch("http://localhost:5000/api/get/<tabla>/<columna>/=/<valor>/_/_/_")
+.then(data=>data.json())
+.then(data=>{
+    console.log(data);
+})
